@@ -17,6 +17,16 @@
 
   <dependencies>
     <dependency>
+    	<groupId>struts</groupId>
+	<artifactId>struts</artifactId>
+	<version>1.2.9</version>
+    </dependency>
+    <dependency>
+	<groupId>taglibs</groupId>
+	<artifactId>standard</artifactId>
+	<version>1.1.2</version>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.8.2</version>
