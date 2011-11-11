@@ -8,3 +8,66 @@ Story:  An application showing rankings of fantasy football teams with the abili
 4.  The datamodel will be contained within mongoDB
 5.  The DAO's will utilize morphia for integrating to mongoDB
 6.  Deploy a groovy web console for allowing custom real-time queries of the stat data.
+
+
+mongoDB Design
+
+Use cases:
+View an individual team's full scoreboard history.
+	List of weekly matchups: oppenent, myscore, oppenent score, outcome, week played
+View an individual team's record summary.
+	Rank, Team, wins, losses, ties, win percentage, points scored, points against, win streak
+View the summary of all team's records.
+	List of all teams record summary.
+
+
+*Simplest is embedd nothing*
+team : { 
+  id : int, 
+  name : string
+}
+summary : {
+  team : team.id,
+  wins : int,
+  losses : int,
+  ties : int,
+  winPercentage : double,
+  pointsFor : double,
+  pointsAgainst : double,
+  winStreak : int,
+  rank : int
+}
+matchup : {
+  team : team.id,
+  opponent : team.id,  
+  weekPlayed : int,
+  myScore : double,
+  opponentScore : double,
+  outcome : string
+}
+
+*Embed summary*
+team : { 
+  id : int, 
+  name : string
+  summary : {
+  	wins : int,
+  	losses : int,
+  	ties : int,
+  	winPercentage : double,
+  	pointsFor : double,
+  	pointsAgainst : double,
+  	winStreak : int,
+  	rank : int
+  }
+}
+matchup : {
+  team : team.id,
+  opponent : team.id,  
+  weekPlayed : int,
+  myScore : double,
+  opponentScore : double,
+  outcome : string
+}
+
+We will use the embed summary option.
