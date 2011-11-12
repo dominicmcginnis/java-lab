@@ -57,7 +57,6 @@ team : {
   	winPercentage : double,
   	pointsFor : double,
   	pointsAgainst : double,
-  	winStreak : int,
   	rank : int
   }
 }
