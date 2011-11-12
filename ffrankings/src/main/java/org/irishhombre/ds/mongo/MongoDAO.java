@@ -4,6 +4,7 @@ import org.irishhombre.ds.mongo.MongoDbConnectionManager;
 import com.mongodb.DB;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
+import com.mongodb.DBCollection;
 
 public class MongoDAO {
 
@@ -21,7 +22,7 @@ public class MongoDAO {
    }
 
    public void updateCollection(String collectionName, BasicDBObject document) {
-	getCollection(collectionName).update(document);
+	getCollection(collectionName).save(document);
    }
 
    public void insertInCollection(String collectionName, BasicDBObject document) {
