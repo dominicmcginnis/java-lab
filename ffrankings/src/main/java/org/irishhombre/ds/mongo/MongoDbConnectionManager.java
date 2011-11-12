@@ -1,3 +1,5 @@
+package org.irishhombre.ds.mongo;
+
 import com.mongodb.Mongo;
 
 public class MongoDbConnectionManager {
