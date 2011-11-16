@@ -18,7 +18,11 @@ public class MongoDAO {
    }
 
    public DBCursor queryCollection(String collectionName, BasicDBObject query) {
-	return getCollection(collectionName).find(query);
+	if(query == null) {
+   	   return getCollection(collectionName).find();
+	} else {
+   	   return getCollection(collectionName).find(query);
+	}
    }
 
    public void updateCollection(String collectionName, BasicDBObject document) {

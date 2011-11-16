@@ -11,16 +11,12 @@
       </form-bean>
   </form-beans>
   <global-exceptions />
-  <global-forwards type="org.apache.struts.webapp.examples.CustomActionForward">
-    <forward name="welcome" path="/welcome.do">
-         <set-property property="example" value="EXAMPLE" />
-     </forward>
-   </global-forwards>
-  <action-mappings type="org.apache.struts.webapp.examples.CustomActionMapping">
-    <action path="/welcome" forward="/welcome.jsp" >
-        <set-property property="example" value="EXAMPLE" />
-    </action>
+  <global-forwards />
+  -->
+  <action-mappings>
+	  <action path="/teamStandings" type="org.irishhombre.actions.TeamStandingsAction">
+		  <forward name="success" path="/teamStandings.jsp" />
+	  </action>
   </action-mappings>
-  <message-resources parameter="MessageResources" / -->
 </struts-config>
 
