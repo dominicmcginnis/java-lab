@@ -1,0 +1,13 @@
+--Technologies Explored--
+1.  Maven   - IN PROGESS (outstanding: explore test cases)
+2.  Tomcat 7 - COMPLETED
+3.  mongoDB - COMPLETED
+4.  Groovy 
+5.  Logback
+6.  SpringDataSource or Morhpia integration
+
+--App Use cases--
+1.  View an individual team's full scoreboard history.
+2.  View an individual team's record summary.
+3.  View the summary of all team's records. - COMPLETED
+
