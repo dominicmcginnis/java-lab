@@ -11,9 +11,14 @@ import org.apache.struts.action.ActionMapping;
 import org.irishhombre.documents.Teams;
 import org.irishhombre.documents.Teams.Team;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.List;
 
 public class TeamStandingsAction extends Action {
+
+    Logger logger = LoggerFactory.getLogger("org.irishhombre.actions.TeamStandingsAction");
 
     public static String SUCCESS = "success";
 
@@ -28,7 +33,7 @@ public class TeamStandingsAction extends Action {
 	Teams teams = new Teams();
 	List<Team> allTeams = teams.getAllTeams();
 
-	System.out.println("Setting the teams attribute to: " + allTeams);
+	logger.info("Setting the teams attribute to: " + allTeams);
 	request.setAttribute("TEAMS", allTeams);
 	
         return mapping.findForward(SUCCESS);
