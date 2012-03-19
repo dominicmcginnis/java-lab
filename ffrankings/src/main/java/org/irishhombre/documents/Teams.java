@@ -40,7 +40,7 @@ public class Teams {
 		}
 		return t;
 	}
-	
+
 	private Team populateTeam(DBObject team) {
 		Team t = new Team();
 

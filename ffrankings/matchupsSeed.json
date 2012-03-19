@@ -1,3 +1,3 @@
-{"opponent" : "Sexual Chocolate", "myScore" : 112.65, "opponentScore" : 151.85, "outcome" : "Loss"}
-{"opponent" : "Cannibalistic Cows", "myScore" : 146.30, "opponentScore" : 115.45, "outcome" : "Win"}
+{"name" : "Bly", "opponent" : "Sexual Chocolate", "weekPlayed" : 1, "myScore" : 112.65, "opponentScore" : 151.85, "outcome" : "Loss"}
+{"name" : "Bly", "opponent" : "Cannibalistic Cows", "weekPlayed" : 2, "myScore" : 146.30, "opponentScore" : 115.45, "outcome" : "Win"}
 

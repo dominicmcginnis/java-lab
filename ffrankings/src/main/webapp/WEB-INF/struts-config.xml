@@ -17,6 +17,9 @@
 	  <action path="/teamStandings" type="org.irishhombre.actions.TeamStandingsAction">
 		  <forward name="success" path="/teamStandings.jsp" />
 	  </action>
+	  <action path="/teamDrilldown" type="org.irishhombre.actions.TeamDrilldownAction">	  
+		  <forward name="success" path="/teamDrilldown.jsp" />
+	  </action>
   </action-mappings>
 </struts-config>
 
