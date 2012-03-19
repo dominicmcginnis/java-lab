@@ -8,17 +8,17 @@
  </head>
  <body>
 	 <p>Fantasy Footbal Team standings</p>
-	 <table>
-		 <th>
-			 <td>Name</td>
-			 <td>Rank<td>
-			 <td>Wins</td>
-			 <td>Losses</td>
-			 <td>Ties</td>
-			 <td>Win Percentage</td>
-			 <td>points For</td>
-			 <td>Points Against</td>
-		 </th>
+	 <table border=1>
+		 <tr>
+			 <th>Name</th>
+			 <th>Rank</th>
+			 <th>Wins</th>
+			 <th>Losses</th>
+			 <th>Ties</th>
+			 <th>Win Percentage</th>
+			 <th>Points For</th>
+			 <th>Points Against</th>
+		 </tr>
 		<c:forEach var="team" items="${requestScope.TEAMS}">
 	<tr>
 		<td>${team.name}</td>
