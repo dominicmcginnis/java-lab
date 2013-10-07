@@ -20,7 +20,7 @@ public class MongoDbConnectionManager {
 	return instance;
   }
 
-  private Mongo getMongo() {
+  public Mongo getMongo() {
 	return m;
   }
 
