@@ -7,7 +7,7 @@
 6.  SpringDataSource or Morhpia integration
 
 --App Use cases--
-1.  View an individual team's full scoreboard history. - COMLETED
-2.  View an individual team's record summary. - COMLETED
+1.  View an individual team's full scoreboard history. - COMPLETED
+2.  View an individual team's record summary. - COMPLETED
 3.  View the summary of all team's records. - COMPLETED
 
