@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite name="domReadystateLoading" tests="1">
+    <testcase name="domReadystateLoading" time="0"/>
+  </testsuite>
+  <testsuite name="domReadystateInteractive" tests="1">
+    <testcase name="domReadystateInteractive" time="902"/>
+  </testsuite>
+  <testsuite name="windowOnload" tests="1">
+    <testcase name="windowOnload" time="0"/>
+  </testsuite>
+  <testsuite name="elapsedLoadTime" tests="1">
+    <testcase name="elapsedLoadTime" time="1103"/>
+  </testsuite>
+  <testsuite name="numberOfResources" tests="1">
+    <testcase name="numberOfResources" time="11"/>
+  </testsuite>
+  <testsuite name="totalResourcesTime" tests="1">
+    <testcase name="totalResourcesTime" time="1567"/>
+  </testsuite>
+  <testsuite name="totalResourcesSize" tests="1">
+    <testcase name="totalResourcesSize" time="877.019"/>
+  </testsuite>
+  <testsuite name="nonReportingResources" tests="1">
+    <testcase name="nonReportingResources" time="0"/>
+  </testsuite>
+</testsuites>
