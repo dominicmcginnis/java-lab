@@ -10,7 +10,8 @@
 
   <properties>
 	  <junit.version>4.8.2</junit.version>
-	  <jmeter.home>/dev/dev_tools/apache-jmeter-2.9</jmeter.home>
+	  <jmeter.home>/User/rmcginnis/opt/apache-jmeter-2.8</jmeter.home>
+	  <!-- jmeter.home>/dev/dev_tools/apache-jmeter-2.9</jmeter.home -->
   </properties>
 
   <build>
@@ -21,42 +22,79 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.1</version>
 			<configuration>
-					<url>http://127.0.0.1:8080/manager/html</url>
+				<url>http://127.0.0.1:8080/manager/text</url>
 				<server>TomcatServer</server>
 				<path>/ffrankings</path>
+				<update>true</update>
 			</configuration>
 		</plugin>
-                        <plugin>
-                                <groupId>org.codehaus.mojo</groupId>
-								<artifactId>chronos-jmeter-maven-plugin</artifactId>
-                                <version>1.1.0</version>
-                                <configuration>
-										<input>${basedir}/src/main/resources/jmeterTests</input>
-										<jmeterHome>${jmeter.home}</jmeterHome>
-										<heap>756m</heap>
-                                        <responsetime95>8</responsetime95>
-                                        <stopOnFailed>true</stopOnFailed>										
-                                </configuration>
-                                <executions>
-                                        <execution>
-                                                <goals>
-														<goal>jmeter</goal>
-														<goal>check</goal>
-                                                </goals>
-                                        </execution>
-                                </executions>
-                        </plugin>
-
+    <plugin>
+      <groupId>org.codehaus.mojo</groupId>
+       	<artifactId>chronos-jmeter-maven-plugin</artifactId>
+        <version>1.1.0</version>
+        <configuration>
+    			<input>${basedir}/src/test/scripts/jmeterTests</input>
+    			<jmeterHome>${jmeter.home}</jmeterHome>
+    			<heap>756m</heap>
+          <responsetime95>20</responsetime95>
+          <stopOnFailed>true</stopOnFailed>										
+      </configuration>
+      <executions>
+        <execution>
+          <goals>
+		<goal>jmeter</goal>
+		<goal>check</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+    <plugin>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>exec-maven-plugin</artifactId>
+      <version>1.2.1</version>
+      <executions>
+        <execution>
+           <id>Phantom Tests</id>
+           <!-- phase>prepare-package</phase -->
+           <goals>
+             <goal>exec</goal>
+           </goals>
+        </execution>
+      </executions>
+      <configuration>
+        <executable>${basedir}/src/test/scripts/runPhantomTests.sh</executable>
+        <arguments>
+           <argument>${basedir}/src/test/scripts</argument>
+           <argument>http://localhost:8080/ffrankings/teamStandings.do</argument>
+           <argument>${basedir}/target/reports</argument>
+           <argument>standings</argument>
+        </arguments>
+      </configuration>
+    </plugin>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-report-plugin</artifactId>
+      <version>2.16</version>
+      <configuration>
+        <skipTests>true</skipTests>
+      </configuration>      
+    </plugin>
 	</plugins>	
   </build>
+
     <reporting>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
-				<artifactId>chronos-report-maven-plugin</artifactId>
+        				<artifactId>chronos-report-maven-plugin</artifactId>
                 <version>1.1.0</version>
             </plugin>
-        </plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>2.16</version>
+            </plugin>
+         </plugins>
     </reporting>
 
   <dependencies>
